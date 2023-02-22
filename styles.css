@@ -1,0 +1,68 @@
+
+@keyframes slideIn{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0) rotate3d(20, -7 , 10 , 30deg);
+    }
+}
+
+#displayGrid{
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(3, 100px);
+    grid-template-areas: 
+    "q w e dis dis"
+    "a s d null null"
+    "z x c null null";
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
+    width: auto;
+    position: absolute;
+    top: 400px;
+    left: 40%;
+    border: 5px solid black;
+    padding: 20px;
+    background-color: rgb(236, 159, 15);
+    box-shadow: 10px 10px 5px rgb(19, 18, 18);
+    animation: slideIn 1s ease-out;
+}
+
+#displayGrid .drum-pad{    
+    background-color: rgb(40, 37, 37);
+    color: white;
+    text-align: center;
+    transform: translateY(-5px);
+}
+
+#displayGrid .drum-pad:hover{
+    transform: translateY(-3px);
+}
+
+#displayGrid .drum-pad:active{
+    transform: translateY(10px);
+}
+
+#front{
+    background-color: black;
+    transform: translateZ(50px);
+}
+
+#display{
+    grid-area: dis; 
+    text-align: center;
+    font-family: 'Arvo', serif;
+    font-size: 30px;
+}
+
+#heater1{ grid-area: q;}
+#heater2{ grid-area: w;}
+#heater3{grid-area: e;}
+#heater4{grid-area: a;}
+#clap{grid-area: s;}
+#openhh{grid-area: d;}
+#kicknhat{grid-area: z;}
+#kick{grid-area: x;}
+#closedhh{grid-area: c;}
